@@ -1,4 +1,4 @@
-package com.khj.java.ssg;
+package com.jms.java.ssg;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +32,9 @@ public class Main {
 				String title = sc.nextLine();
 				System.out.printf("내용 : ");
 				String body = sc.nextLine();
-
-				Article article = new Article(id, title, body);
+				String regDate=Util.getNowDateStr();
+				
+				Article article = new Article(id, regDate, title, body);
 				articles.add(article);
 
 				lastArticleId = id;
@@ -105,7 +106,7 @@ public class Main {
 				System.out.printf("%s(은)는 존재하지 않는 명령어 입니다.\n", command);
 			}
 		}
-
+   
 		sc.close();
 		System.out.println("== 프로그램 끝 == ");
 	}
@@ -115,9 +116,10 @@ class Article {
 	int id;
 	String title;
 	String body;
-
-	public Article(int id, String title, String body) {
+	String regDate;
+	public Article(int id, String regDate,String title, String body) {
 		this.id = id;
+		this.regDate=regDate;
 		this.title = title;
 		this.body = body;
 	}
