@@ -1,11 +1,11 @@
-package com.jms.java.ssg;
+package com.jms.java.ssg.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Util {
 	public static String getNowDateStr() {
-		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date now = new Date();
 		return sdf1.format(now);
 	}
